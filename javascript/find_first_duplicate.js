@@ -1,5 +1,17 @@
 function findFirstDuplicate(arr) {
   // type your code here
+  let compArr = []
+  let sol = -1
+  //not using foreach because it cant be ended prematurely(afaik)
+  for (index = 0; index < arr.length; index++){
+  let element = arr[index]
+    if (compArr.includes(element)) {
+      sol = element
+      break
+    }
+    else {compArr.push(element)}
+  }
+  return sol;
 }
 
 if (require.main === module) {
